@@ -46,7 +46,7 @@ class FileReader {
         $result = [];
         foreach ($this->reader->fetchAll() as $k => $item){
             if ($k === 0 ) continue;
-            list($slot, $name, $id, $count, $slots) = $item;
+            list($slot, $name, , $count) = $item;
             if ($this->isValidSelection($slot)) {
                 if (!$this->shouldExclude($name)){
                     array_push($result, [
